@@ -1,3 +1,10 @@
+<img width="699" height="496" alt="Screenshot 2026-04-24 195844" src="https://github.com/user-attachments/assets/38e72683-f43c-4cb0-aecb-1fa32408a412" />
+<img width="699" height="496" alt="Screenshot 2026-04-24 195844" src="https://github.com/user-attachments/assets/ef49656b-2231-41a1-be7f-19690e6e6006" />
+<img width="699" height="496" alt="Screenshot 2026-04-24 195844" src="https://github.com/user-attachments/assets/fa7899fa-75bf-456d-80ac-a557e4989cbc" />
+<img width="699" height="496" alt="Screenshot 2026-04-24 195844" src="https://github.com/user-attachments/assets/7c33664e-ed81-4b23-b9f4-78b83d260fcd" />
+<img width="699" height="496" alt="Screenshot 2026-04-24 195844" src="https://github.com/user-attachments/assets/a4a84ad5-8399-48e0-9aa0-3978391529d2" />
+<img width="699" height="496" alt="Screenshot 2026-04-24 195844" src="https://github.com/user-attachments/assets/6d37311a-ec3e-490f-be1c-2eecb06aa5bb" />
+<img width="699" height="496" alt="Screenshot 2026-04-24 195844" src="https://github.com/user-attachments/assets/a1935b0e-7556-4375-8749-cd22cd158741" />
 <!-- Bild einbetten: ![Alternativer Text](relativer/pfad/zur/datei) -->
 ![SQLite Logo](assets/sqlite3_logo.gif)
 
@@ -61,7 +68,8 @@ If any of the above commands return `command not found`, resolve the installatio
 
 > **Screenshot 1:** Take a screenshot of your terminal showing all four successful version checks and insert it here.
 >
-> `[insert screenshot]`
+> `[insert screenshot]`<img width="699" height="496" alt="Screenshot 2026-04-24 195844" src="https://github.com/user-attachments/assets/70e61787-473a-4f99-8b3b-c408e0020754" />
+
 
 ---
 
@@ -109,7 +117,9 @@ cat sensordata/T01_2026-03-01.csv
 
 > **Screenshot 2:** Take a screenshot showing the output of `ls sensordata/ | head -8` and the contents of one CSV file, and insert it here.
 >
-> `[insert screenshot]`
+> `[insert screenshot]`<img width="1" height="2" alt="Screenshot 2026-04-24 203823" src="https://github.com/user-attachments/assets/aa41508a-185a-41f4-9f4e-2219452a61e9" />
+<img width="561" height="329" alt="Screenshot 2026-04-24 202521" src="https://github.com/user-attachments/assets/05f00ac2-7d00-48ed-9a50-8f647fbde328" />
+
 
 ### What does the script do, line by line?
 
@@ -199,7 +209,8 @@ echo "Import complete."
 
 > **Screenshot 3:** Take a screenshot showing the successful execution of the import script and the result of the `COUNT(*)` query, and insert it here.
 >
-> `[insert screenshot]`
+> `[insert screenshot]`<img width="1" height="2" alt="Screenshot 2026-04-24 203823" src="https://github.com/user-attachments/assets/65a66d9a-f0de-4267-9b43-25e2a901faa4" />
+
 
 ---
 
@@ -268,7 +279,9 @@ EOF
 
 > **Screenshot 4:** Take a screenshot showing the output of the Task 1 SQLite query (the first and last few rows are sufficient), and insert it here.
 >
-> `[insert screenshot]`
+> `[insert screenshot]`<img width="499" height="575" alt="Screenshot 2026-04-24 204510" src="https://github.com/user-attachments/assets/02fdb499-6329-47fb-83bb-41eec8ce9ea7" /><img width="437" height="341" alt="Screenshot 2026-04-24 204841" src="https://github.com/user-attachments/assets/ddd44509-e7b6-495c-8103-bdb040774972" />
+
+
 
 ### Questions for Task 1
 
@@ -276,15 +289,15 @@ Answer the following questions in your own words and add your answers directly b
 
 **Question 1.1:** Why is `grep -v "^timestamp"` needed in the shell solution even though the files are already filtered with `grep -h "T02"`? Could this step be omitted? Justify your answer.
 
-> *Your answer:*
+> *Your answer:*`grep -v "^timestamp" entfernt die Kopzeile "timestamp" ohne diesen Schritt kommt die kopfzeile manchamal trotzdem mit
 
 **Question 1.2:** The shell solution uses `sensordata/T02_*.csv` as a file pattern, even though `grep -h "T02"` already filters for `T02`. Why is the file pattern still important — and what would happen if you used `sensordata/*.csv` instead?
 
-> *Your answer:*
+> *Your answer:*`sensordata/T02_*.csv` wählt nur Dateien von Sensor T02. mit*.csv kommen auch anderre Sensoren dazu
 
 **Question 1.3:** The SQL solution uses `ORDER BY timestamp` even though `timestamp` is stored as type `TEXT`. Why does chronological sorting still work correctly? Under what condition would it fail?
 
-> *Your answer:*
+> *Your answer:* Die Sortierung klpappt , weil das Datum im Format YYYY-MM-DD steht. es würde falsch werden , wenn das Datum ein anderes Format hätte.
 
 ---
 
@@ -356,21 +369,23 @@ EOF
 
 > **Screenshot 5:** Take a screenshot showing the output of the Task 2 SQLite query and insert it here.
 >
-> `[insert screenshot]`
+> `[insert screenshot]`<img width="524" height="799" alt="Screenshot 2026-04-24 210750" src="https://github.com/user-attachments/assets/e5082c7a-3f4e-4835-884b-85a9ac991720" />
+
 
 ### Questions for Task 2
 
 **Question 2.1:** The shell solution filters by date using `grep -rh "2026-03"`. What problem could arise if a sensor value happened to contain the string `2026-03` — for example as part of an error note? How does the SQL solution handle this problem?
 
-> *Your answer:*
+> *Your answer:* wenn ein Textfeld `2026-03`enthält , nimmt grep die zeile falsch mit. SQL prüft nur die Spalte timestamp, darum  passiert das nicht.
 
-**Question 2.2:** The SQL solution uses `timestamp LIKE '2026-03-%'` for the date filter instead of a proper date function. Name one advantage and one disadvantage of this approach.
+**Question 2.2:** The SQL solution uses `timestamp LIKE '2026-03-%'` for the date filter instead of a poui en deux lignes
+roper date function. Name one advantage and one disadvantage of this approach.
 
-> *Your answer:*
+> *Your answer:* '2026-03-%'` ist sehr einfach und schnell, als Nachteile er prüft nur Text , nicht echtes Datum.
 
 **Question 2.3:** The SQL solution returns results sorted by `ORDER BY value_celsius DESC`. The shell solution does not include this sorting. Extend the shell solution to also sort by temperature in descending order and write your command here.
 
-> *Your answer (extended shell command):*
+> *Your answer (extended shell command):* man kann am Ende '| sort -k3 -nr' hinzufügen. so sortiert die Shell auch nach Temperatur, groß nach klein.
 
 ---
 
@@ -457,21 +472,25 @@ EOF
 
 > **Screenshot 6:** Take a screenshot showing the output of the Task 3 SQLite query — the four rows with sensor statistics — and insert it here.
 >
-> `[insert screenshot]`
+> `[insert screenshot]`<img width="473" height="348" alt="Screenshot 2026-04-24 212918" src="https://github.com/user-attachments/assets/4438489f-5058-474f-a019-12f56ba7616e" />
+
 
 ### Questions for Task 3
 
 **Question 3.1:** The `awk` solution initialises `min=9999` and `max=-9999`. What would happen if all temperature values in the dataset were greater than 9999? How could the initialisation be made more robust?
 
-> *Your answer:*
+> *Your answer:*Wenn alle Werte größer als 9999 sind, bleibt min=9999 falsch und wird nie geändert.
+Man soll min mit dem ersten echten Messwert starten, nicht mit 9999.
 
 **Question 3.2:** The SQL solution uses `GROUP BY sensor_id`. What would the query return *without* this clause — i.e. if you ran `SELECT sensor_id, MIN(value_celsius), MAX(value_celsius), ROUND(AVG(value_celsius), 1) FROM readings`? Try it and describe the result.
 
-> *Your answer:*
+> *Your answer:*Ohne GROUP BY gibt SQL nur eine einzige Zeile für alle Sensoren zusammen.
+Man sieht ein globales Minimum, Maximum und Mittel, nicht pro Sensor.
 
 **Question 3.3:** Extend the SQL query with an additional column `COUNT(*) AS num_readings` that shows the total number of measurements for each sensor. Write the complete extended query here.
 
-> *Your answer (extended SQL query):*
+> *Your answer (extended SQL query):*Man fügt COUNT(*) AS num_readings hinzu.
+So zeigt SQL, wie viele Messungen jeder Sensor hat.
 
 ---
 
@@ -482,7 +501,8 @@ After completing all three tasks, answer the following questions:
 **Question A — Writing effort:**
 Which approach was easier to write correctly on the first try? Explain which properties of each language contributed to this.
 
-> *Your answer:*
+> *Your answer:*SQL war leichter, weil die Sprache klare Befehle hat und wenig Code braucht.
+Shell war schwerer, weil man selbst Schleifen, Variablen und Logik schreiben muss.
 
 **Question B — Extensibility:**
 What would you need to change in the shell solution if a fifth sensor `T05` were added? What about the SQL solution? Which approach scales better — and why?
@@ -492,16 +512,19 @@ What would you need to change in the shell solution if a fifth sensor `T05` were
 **Question C — Performance:**
 The shell solution reads files from disk on every invocation. A database can cache frequently queried data in memory. What does this mean for performance with 10 000 sensors and multi-year measurement data?
 
-> *Your answer:*
+> *Your answer:*Im Shell‑Skript muss man für T05 neuen Code hinzufügen.
+In SQL reicht es, nichts zu ändern — GROUP BY findet neue Sensoren automatisch.
 
 **Question D — Declarative vs. imperative:**
 SQL is called a *declarative* language: you describe *what* you want, not *how* to compute it. Bash/awk, by contrast, are *imperative*: you write step by step how the result is to be computed. In which of the three tasks did you feel this difference most clearly? Justify your choice.
 
-> *Your answer:*
+> *Your answer:*Den größten Unterschied fühlte ich in Task 2, weil SQL nur sagt was man will, aber Shell jeden Schritt genau braucht.
+SQL war kurz und klar, Shell musste viele Befehle und Logik haben.
 
 > **Screenshot 7:** Take a final screenshot of your terminal showing the SQLite prompt with a query of your own invention on the `readings` table — one you came up with yourself that goes beyond the tasks above — and insert it here.
 >
-> `[insert screenshot]`
+> `[insert screenshot]`<img width="563" height="116" alt="Screenshot 2026-04-24 214001" src="https://github.com/user-attachments/assets/afea1c38-ba66-4034-9244-e7be5fbce793" />
+
 
 ---
 
